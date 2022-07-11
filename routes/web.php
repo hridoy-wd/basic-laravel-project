@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AboutController;
 use App\Http\Controllers\adminController;
 use App\Http\Controllers\Home\HomeSlideController;
 use Illuminate\Support\Facades\Route;
@@ -31,6 +32,10 @@ Route::controller(HomeSlideController::class)->group(function(){
     Route::post('/home/slideUpdate', 'update')->name('store.homeSlide');
     });
 
+Route::controller(AboutController::class)->group(function(){
+    Route::get('/about/setup', 'index')->name('about.setup');
+});
+    
 Route::get('/dashboard', function () {
     return view('admin.index')->with('message','Data added Successfully');
 })->middleware(['auth'])->name('dashboard');
