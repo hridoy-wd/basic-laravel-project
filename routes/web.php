@@ -35,8 +35,9 @@ Route::controller(HomeSlideController::class)->group(function(){
 Route::controller(AboutController::class)->group(function(){
     Route::get('/about/setup', 'index')->name('about.setup');
     Route::post('/about/update', 'update')->name('about.update');
+    Route::get('/about', 'homeAbout')->name('home.about');
 });
-    
+
 Route::get('/dashboard', function () {
     return view('admin.index')->with('message','Data added Successfully');
 })->middleware(['auth'])->name('dashboard');

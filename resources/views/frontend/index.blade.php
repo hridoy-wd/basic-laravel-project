@@ -3,7 +3,7 @@
 <main>
 
     <!-- banner-area -->
-  @include('frontend.body.homeSlide')
+  @include('frontend.home_all.homeSlide')
     <!-- banner-area-end -->
 
     <!-- about-area -->
@@ -42,7 +42,7 @@
                         </li>
                     </ul>
                 </div>
-               @include('frontend.body.about')
+               @include('frontend.home_all.about')
             </div>
         </div>
     </section>
