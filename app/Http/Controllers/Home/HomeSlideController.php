@@ -29,9 +29,21 @@ class HomeSlideController extends Controller
                 'short_title'=>$request->short_title,
                 'slide_img' =>  $save_url
           ]);
-
+          return redirect()->back()->with('message','successfully update your profile');
         
-        }  return redirect()->back()->with('message','successfully update your profile');
+        }  else{
+
+            HomeSlide::findOrFail($slide_id)->update([
+                'title'=>$request->title,
+                'video_url'=>$request->video_url,
+                'short_title'=>$request->short_title,
+               
+          ]);
+           
+
+        return redirect()->back()->with('message','successfully update your profile');
+
+        } // end Else
    
     }
 }

@@ -35,6 +35,14 @@
         <link href="backend/assets/css/icons.min.css" rel="stylesheet" type="text/css" />
         <!-- App Css-->
         <link href="{{ asset('backend/assets/css/app.min.css') }}" id="app-style" rel="stylesheet" type="text/css" />
+        {{-- /////editor code --}}
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+        
+        <script>
+             tinymce.init({
+               selector: 'textarea#editor', });
+        </script>
 
     </head>
 
@@ -79,6 +87,7 @@
 
         <!-- JAVASCRIPT -->
        <script src="backend/assets/libs/jquery/jquery.min.js"></script> 
+       <script src="{{ asset('backend/assets/libs/jquery/jquery.min.js') }}"></script>
         <script src="{{ asset('backend/assets/libs/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
         <script src="{{ asset('backend/assets/libs/metismenu/metisMenu.min.js') }}"></script>
         <script src="{{asset('backend/assets/libs/simplebar/simplebar.min.js') }}"></script>
@@ -102,9 +111,11 @@
 
         <!-- App js -->
       
-        <script src="  {{ asset('backend/assets/js/app.js') }}"></script>
+        <script src="{{ asset('backend/assets/js/app.js') }}"></script>
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
-
+   <!--tinymce js-->
+ 
+  
         <script>
             @if(Session::has('message'))
             toastr.options =
@@ -142,6 +153,16 @@
                     toastr.warning("{{ session('warning') }}");
             @endif
           </script>
+
+     {{-- ///text editor setup --}}
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.6.0/umd/popper.min.js" integrity="sha512-BmM0/BQlqh02wuK5Gz9yrbe7VyIVwOzD1o40yi1IsTjriX/NGF37NyXHfmFzIlMmoSIBXgqDiG1VNU6kB5dBbA==" crossorigin="anonymous"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+       
+         
     </body>
 
 </html>
