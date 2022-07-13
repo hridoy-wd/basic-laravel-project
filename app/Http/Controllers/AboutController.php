@@ -76,10 +76,10 @@ class AboutController extends Controller
                 'created_at' => Carbon::now()
 
             ]); 
-
+       
              } // End of the foreach
 
-        return redirect()->back()->with("multi Image store successfully");
+             return redirect()->back()->with("multi Image store successfully");
     }
 
     public function all_multi_img(){
@@ -108,6 +108,14 @@ class AboutController extends Controller
             return redirect()->route('all.multi.img')->with("img update successfully");
         }else{
 
-        }   return redirect()->back();
+        }   return redirect()->route('all.multi.img')->with("img update successfully");
+    }//end method
+
+    public function delete_multi_img($id){
+       $member =  MultiImage::findOrFail($id);
+       $member->delete();
+     
+        return redirect()->route('all.multi.img')
+                        ->with('success','Product deleted successfully');
     }
 }

@@ -1,7 +1,22 @@
 @php
       $about = App\Models\About::find(1);
 @endphp
-
+<div class="container">
+    <div class="row align-items-center">
+        <div class="col-lg-6">
+            <ul class="about__icons__wrap">
+                @php
+                       $allMultiImg = App\Models\MultiImage::all();
+                @endphp
+                @foreach ($allMultiImg as $image)
+                    
+                
+                <li>
+                    <img class="light" src="{{ asset($image->multi_image)  }}" alt="XD">
+                </li>
+                @endforeach
+            </ul>
+        </div>
 <div class="col-lg-6">
     <div class="about__content">
         <div class="section__title">
