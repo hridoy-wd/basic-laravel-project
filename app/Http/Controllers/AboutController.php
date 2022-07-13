@@ -79,13 +79,12 @@ class AboutController extends Controller
 
              } // End of the foreach
 
-
-        
-
         return redirect()->back()->with("multi Image store successfully");
-
-     
-
-
     }
+
+    public function all_multi_img(){
+        $allMultiImg = MultiImage::all();
+        return view('admin.about.multiImageShow', compact('allMultiImg'));
+
+    }//end method
 }
