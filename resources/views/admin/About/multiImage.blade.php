@@ -8,7 +8,7 @@
                 
 
                     <h4 class="card-title">Edit Your About Page</h4>
-                    <form method="post" action="{{ route('about.update') }}" enctype="multipart/form-data">
+                    <form method="post" action="{{ route('store.multiImage') }}" enctype="multipart/form-data">
                       @csrf
                    
 
@@ -28,7 +28,7 @@
                        <div class="row mb-3">
                           <label for="example-text-input" class="col-sm-2 col-form-label">Multi Image </label>
                           <div class="col-sm-10">
-                     <input name="about_image" class="form-control" multiple type="file" id="image">
+                     <input name="multi_image[]" class="form-control" multiple="" type="file" id="image">
                           </div>
                       </div>
                      <!-- end row -->

@@ -3,8 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\About;
+use App\Models\multiImage;
+
 use Illuminate\Http\Request;
 use Image;
+use Illuminate\Support\Carbon;
 class AboutController extends Controller
 {
     //
@@ -55,5 +58,34 @@ class AboutController extends Controller
     public function multiImage(){
         
         return view('admin.about.multiImage');
+    }
+
+    public function storeMultiImage(Request $request){
+        $image = $request->file('multi_image');
+
+        foreach ($image as $multi_image) {
+
+           $name_gen = hexdec(uniqid()).'.'.$multi_image->getClientOriginalExtension();  // 3434343443.jpg
+
+            Image::make($multi_image)->resize(220,220)->save('upload/multi_image/'.$name_gen);
+            $save_url = 'upload/multi_image/'.$name_gen;
+
+            MultiImage::insert([
+
+                'multi_image' => $save_url,
+                'created_at' => Carbon::now()
+
+            ]); 
+
+             } // End of the foreach
+
+
+        
+
+        return redirect()->back()->with("multi Image store successfully");
+
+     
+
+
     }
 }
