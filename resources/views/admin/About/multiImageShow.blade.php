@@ -30,7 +30,7 @@
                     <tr>
                         <td>{{ $i++ }}</td>
                         <td><img src="{{ $image->multi_image }}" width="60" height="60" alt=""></td>
-                        <td><button class="btn btn-primary"><a href="" style="color: white">Edit</a></button>
+                        <td><button class="btn btn-primary"><a href="{{ route('edit.multiImage', $image->id) }}" style="color: white">Edit</a></button>
                             <button class="btn btn-danger"><a href="" style="color: white">Delete</a></button>
                         </td>
                     </tr>

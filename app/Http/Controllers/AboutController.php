@@ -87,4 +87,27 @@ class AboutController extends Controller
         return view('admin.about.multiImageShow', compact('allMultiImg'));
 
     }//end method
+
+    public function edit_multi_img($id){
+             $onellMultiImage = multiImage::findOrFail($id);
+             return view('admin.about.editMultiImage', compact('onellMultiImage'));
+    }//end method
+
+    public function update_multi_image(Request $request){
+        $updateImage = $request->id;
+
+        if($request->file('multi_image')){
+            $file = $request->file('multi_image');
+            $fileName = date('YmdHi').'.'. $file->getClientOriginalName();
+            Image::make($file)->resize(220,220)->save('upload/multi_image/'.$fileName);
+            $save_url = 'upload/multi_image/'.$fileName;
+
+            MultiImage::findOrFail( $updateImage)->update([
+                'multi_image' => $save_url,
+            ]);
+            return redirect()->route('all.multi.img')->with("img update successfully");
+        }else{
+
+        }   return redirect()->back();
+    }
 }

@@ -42,7 +42,9 @@ Route::controller(AboutController::class)->group(function(){
     Route::get('/about/multiImage', 'multiImage')->name('about.multi.img');
     Route::post('/store/multiImage', 'storeMultiImage')->name('store.multiImage');
     Route::get('/multiImage', 'all_multi_img')->name('all.multi.img');
-    
+    Route::get('/edit/multi/image/{id}', 'edit_multi_img')->name('edit.multiImage');
+    Route::post('/update/multiImage', 'update_multi_image')->name('update.multi.image');
+
 });//end method
 
 //breeze default all route
