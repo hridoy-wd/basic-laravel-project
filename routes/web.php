@@ -64,6 +64,9 @@ Route::controller(ServiceController::class)->group(function(){
 
 Route::controller(PortfolioController::class)->group(function(){
     Route::get('portfolio/all', 'index')->name('all.portfolio');
+    Route::get('portfolio/add', 'add')->name('add.portfolio');
+    Route::post('portfolio/store', 'store')->name('store.portfolio');
+   
    
 });
 //end method

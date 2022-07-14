@@ -12,14 +12,13 @@
                             default, so all you need to do to use it with your own tables is to call
                             the construction function: </code>.
                         </p>
-                        {{-- <button class="btn btn-primary"><a href="{{ route('service.add') }}" style="color: white">Add</a></button> --}}
+                        <button class="btn btn-primary"><a href="{{ route('add.portfolio') }}" style="color: white">Add</a></button>
                         <table id="datatable" class="table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                             <thead>
                             <tr>
                                 <th>Id</th>
                                 <th>Portfolio Name</th>
                                 <th>Portfolio Title</th>
-                                <th>Portfolio Description</th>
                                 <th>Portfolio Image</th>
                                 <th>Action</th>
                             </tr>
@@ -33,8 +32,7 @@
                                 <td>{{ $i++ }}</td>
                                 <td>{{ $portfolio -> portfolio_name }}</td>
                                 <td>{{ $portfolio -> portfolio_title }}</td>
-                                <td>{!! $portfolio -> portfolio_description !!}</td>
-                                <td><img src="{{ asset($portfolio -> portfolio_image) }}" alt=""></td>
+                                <td><img src="{{ asset($portfolio -> portfolio_image) }}" width="60" height="60" alt=""></td>
                                 <td>
                                     <button class="btn btn-info"><a href="" style="color: white">Edit</a></button>
                                     <button class="btn btn-danger"><a href="" style="color: white">Delete</a></button>
