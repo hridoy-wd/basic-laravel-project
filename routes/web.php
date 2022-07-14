@@ -3,7 +3,9 @@
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\adminController;
 use App\Http\Controllers\Home\HomeSlideController;
+use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\ServiceController;
+use App\Models\portfolio;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -57,6 +59,12 @@ Route::controller(ServiceController::class)->group(function(){
     Route::get('service/destroy/{id}', 'destroy')->name('service.destroy');
     Route::get('service/edit/{id}', 'edit')->name('service.edit');
     Route::post('service.update', 'update')->name('service.update');
+});
+//end method
+
+Route::controller(PortfolioController::class)->group(function(){
+    Route::get('portfolio/all', 'index')->name('all.portfolio');
+   
 });
 //end method
 
