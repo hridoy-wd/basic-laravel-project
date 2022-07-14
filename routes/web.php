@@ -3,6 +3,7 @@
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\adminController;
 use App\Http\Controllers\Home\HomeSlideController;
+use App\Http\Controllers\ServiceController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -46,7 +47,18 @@ Route::controller(AboutController::class)->group(function(){
     Route::post('/update/multiImage', 'update_multi_image')->name('update.multi.image');
     Route::get('/delete/multi/image/{id}', 'delete_multi_img')->name('delete.multiImage');
 
-});//end method
+});
+//end method
+
+Route::controller(ServiceController::class)->group(function(){
+    Route::get('service/show', 'index')->name('service.show');
+    Route::get('service/add', 'add')->name('service.add');
+    Route::post('service/add', 'add_service')->name('add.one.service');
+    Route::get('service/destroy/{id}', 'destroy')->name('service.destroy');
+    Route::get('service/edit/{id}', 'edit')->name('service.edit');
+    Route::post('service.update', 'update')->name('service.update');
+});
+//end method
 
 //breeze default all route
 Route::get('/dashboard', function () {

@@ -43,6 +43,17 @@
                     </ul>
                    
                 </li>
+                {{-- service page setup --}}
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <i class="ri-mail-send-line"></i>
+                        <span>Service Page Setup</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="false">
+                        <li><a href="{{ route('service.show') }}">All About Content</a></li>
+                        <li><a href="{{ route('service.add') }}">Add About Content</a></li>
+                    </ul>
+                </li>
 
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
