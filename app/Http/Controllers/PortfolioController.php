@@ -74,6 +74,11 @@ class PortfolioController extends Controller
     public function delete($id){
           portfolio::findOrFail($id)->delete();
           return redirect()->back()->with('delete successfully done');
+    }//end method
+
+    public function details($id){
+        $portfolio = portfolio::findOrFail($id);
+        return view('frontend.portfolioDetails',compact('portfolio'));
     }
 
 }

@@ -37,7 +37,7 @@
                                             {{ $item->portfolio_name }}
                                         </span>
                                         <h4 class="title"><a href="portfolio-details.html">{{ $item->portfolio_title }}</a></h4>
-                                        <a href="portfolio-details.html" class="link">Case Study</a>
+                                        <a href="{{ route('portfolio.details',$item->id) }}" class="link">Case Study</a>
                                     </div>
                                 </div>
                                 @endforeach   
