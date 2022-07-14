@@ -28,8 +28,8 @@ class PortfolioController extends Controller
         ]);
         $file = $request->file('portfolio_image');
         $fileName = date('YmdHi').'.'.$file->getClientOriginalExtension();
-        Image::make($file)->resize(1020, 519)->save('upload/portfolio_image'.$fileName );
-        $saveImage = 'upload/portfolio_image'.$fileName;
+        Image::make($file)->resize(1020, 519)->save('upload/portfolio_image/'.$fileName );
+        $saveImage = 'upload/portfolio_image/'.$fileName;
 
         portfolio::insert([
             'portfolio_name'=>$request->portfolio_name,
@@ -52,8 +52,8 @@ class PortfolioController extends Controller
         if($request->file('portfolio_image')){
             $file = $request->file('portfolio_image');
             $fileName = date('YmdHi').'.'.$file->getClientOriginalExtension();
-            Image::make($file)->resize('1020, 519')->save('upload/portfolio_image'.$fileName);
-            $saveimage = 'upload/portfolio_image'.$fileName;
+            Image::make($file)->resize('1020, 519')->save('upload/portfolio_image/'.$fileName);
+            $saveimage = 'upload/portfolio_image/'.$fileName;
 
             portfolio::findOrFail( $portfolio)->update([
                 'portfolio_name'=>$request->portfolio_name,
@@ -70,6 +70,11 @@ class PortfolioController extends Controller
             ]);
             return redirect()->back();
         }
+    }//end method
+
+    public function delete($id){
+          portfolio::findOrFail($id)->delete();
+          return redirect()->back()->with('delete successfully done');
     }
 
 }

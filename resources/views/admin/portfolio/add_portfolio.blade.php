@@ -27,7 +27,7 @@
                       <!-- end row -->
           
           
-                      </div>
+                   
                       <!-- end row -->
           
           
