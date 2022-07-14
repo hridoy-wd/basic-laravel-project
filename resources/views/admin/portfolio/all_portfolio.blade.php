@@ -34,7 +34,7 @@
                                 <td>{{ $portfolio -> portfolio_title }}</td>
                                 <td><img src="{{ asset($portfolio -> portfolio_image) }}" width="60" height="60" alt=""></td>
                                 <td>
-                                    <button class="btn btn-info"><a href="" style="color: white">Edit</a></button>
+                                    <button class="btn btn-info"><a href="{{ route('edit.portfolio',$portfolio->id ) }}" style="color: white">Edit</a></button>
                                     <button class="btn btn-danger"><a href="" style="color: white">Delete</a></button>
                                 </td>
                             </tr>
