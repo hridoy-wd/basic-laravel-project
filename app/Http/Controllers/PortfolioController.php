@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\portfolio;
-use Faker\Provider\Image as ProviderImage;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use Image;
