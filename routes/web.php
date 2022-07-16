@@ -78,6 +78,12 @@ Route::controller(PortfolioController::class)->group(function(){
 
 Route::controller(category::class)->group(function(){
     Route::get('category/all', 'index')->name('all.category');
+    Route::get('category/add', 'add')->name('add.category');
+
+    Route::post('category/store', 'store')->name('store.category');
+
+    
+   
 });
 //end method
 

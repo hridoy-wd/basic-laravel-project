@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\CategoryBlog;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class category extends Controller
@@ -11,5 +12,21 @@ class category extends Controller
     public function index(){
         $allCategory = CategoryBlog::latest()->get();
         return view('admin.category.allCategory', compact('allCategory'));
+    }//end method
+
+    public function add(){
+          return view('admin.category.addCategory');
+    }//end method
+
+    public function store(Request $request){
+        $request->validate([
+            'category'=>'required'
+        ]);
+
+        CategoryBlog::insert([
+             'category'=>$request->category,
+             'created_at'=>Carbon::now(),
+        ]);
+        return redirect()->route('all.category')->with('successfully Add Category');
     }
 }
