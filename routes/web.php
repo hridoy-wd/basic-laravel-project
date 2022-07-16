@@ -2,9 +2,11 @@
 
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\adminController;
+use App\Http\Controllers\category;
 use App\Http\Controllers\Home\HomeSlideController;
 use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\ServiceController;
+use App\Models\CategoryBlog;
 use App\Models\portfolio;
 use Illuminate\Support\Facades\Route;
 
@@ -69,9 +71,13 @@ Route::controller(PortfolioController::class)->group(function(){
     Route::get('portfolio/edit/{id}', 'edit')->name('edit.portfolio');
     Route::post('portfolio/update/', 'update')->name('update.portfolio');
     Route::get('portfolio/delete/{id}', 'delete')->name('delete.portfolio');
-    Route::get('portfolio/details/{id}', 'details')->name('portfolio.details');
+    Route::get('portfolio/details/{id}', 'details')->name('portfolio.details'); 
+});
+//end method
 
-   
+
+Route::controller(category::class)->group(function(){
+    Route::get('category/all', 'index')->name('all.category');
 });
 //end method
 
