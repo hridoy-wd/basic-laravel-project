@@ -14,9 +14,11 @@ class category extends Controller
         return view('admin.category.allCategory', compact('allCategory'));
     }//end method
 
+
     public function add(){
           return view('admin.category.addCategory');
     }//end method
+
 
     public function store(Request $request){
         $request->validate([
@@ -28,5 +30,26 @@ class category extends Controller
              'created_at'=>Carbon::now(),
         ]);
         return redirect()->route('all.category')->with('successfully Add Category');
-    }
+    }//end method
+
+
+    public function edit($id){
+        $categoryEdit =CategoryBlog::findOrFail($id);
+        return view('admin.category.editCategory', compact('categoryEdit'));
+    }//end method
+
+
+    public function update(Request $request){
+        $updateCategory = $request->id;
+
+        CategoryBlog::findOrFail($updateCategory)->update([
+            'category'=>$request->category,
+        ]);
+        return redirect()->route('all.category');
+    }//end method
+
+    public function delete($id){
+        CategoryBlog::findOrFail($id)->delete();
+        return redirect()->route('all.category');
+    }//end method
 }

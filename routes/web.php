@@ -81,6 +81,11 @@ Route::controller(category::class)->group(function(){
     Route::get('category/add', 'add')->name('add.category');
 
     Route::post('category/store', 'store')->name('store.category');
+    Route::get('category/edit/{id}', 'edit')->name('edit.category');
+
+    Route::post('category/update', 'update')->name('update.category');
+    Route::get('category/delete/{id}', 'delete')->name('delete.category');
+
 
     
    

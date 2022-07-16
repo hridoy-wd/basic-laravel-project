@@ -12,7 +12,7 @@
                             default, so all you need to do to use it with your own tables is to call
                             the construction function: </code>.
                         </p>
-                        <button class="btn btn-primary"><a href="" style="color: white">Add</a></button>
+                        <button class="btn btn-primary"><a href="{{ route('add.category') }}" style="color: white">Add</a></button>
                         <table id="datatable" class="table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                             <thead>
                             <tr>
@@ -31,8 +31,8 @@
                                 <td>{{$Category->category}}</td>
                     
                                 <td>
-                                     <button class="btn btn-info"><a href="" style="color: white">Edit</a></button>
-                                    <button class="btn btn-danger"><a href="" style="color: white">Delete</a></button> 
+                                     <button class="btn btn-info"><a href="{{ route('edit.category',$Category->id ) }}" style="color: white">Edit</a></button>
+                                    <button class="btn btn-danger"><a href="{{ route('delete.category',$Category->id ) }}" style="color: white">Delete</a></button> 
                                 </td>
                             </tr>
                                   @endforeach  
