@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\adminController;
+use App\Http\Controllers\BlogController;
 use App\Http\Controllers\category;
 use App\Http\Controllers\Home\HomeSlideController;
 use App\Http\Controllers\PortfolioController;
@@ -85,12 +86,17 @@ Route::controller(category::class)->group(function(){
 
     Route::post('category/update', 'update')->name('update.category');
     Route::get('category/delete/{id}', 'delete')->name('delete.category');
-
-
-    
-   
 });
 //end method
+
+
+Route::controller(BlogController::class)->group(function(){
+    Route::get('blog/all', 'index')->name('all.blog');
+  
+});
+//end method
+
+
 
 //breeze default all route
 Route::get('/dashboard', function () {
