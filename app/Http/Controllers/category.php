@@ -45,11 +45,19 @@ class category extends Controller
         CategoryBlog::findOrFail($updateCategory)->update([
             'category'=>$request->category,
         ]);
+
+
+        
         return redirect()->route('all.category');
     }//end method
 
     public function delete($id){
         CategoryBlog::findOrFail($id)->delete();
+
+        $notification = array(
+            'message' => 'Admin Profile Updated Successfully',
+            'alert-type' => 'success'
+        );
         return redirect()->route('all.category');
     }//end method
 }
