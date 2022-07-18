@@ -19,8 +19,8 @@
                                 <th>Id</th>
                                 <th>Blog Category</th>
                                 <th>Blog Title</th>
-                                <th>blog Image</th>
                                 <th>blog Tags</th>
+                                <th>blog Image</th> 
                             </tr>
                             </thead>
         
@@ -36,7 +36,7 @@
                                 <td><img src="{{ asset($blog ->blog_image) }}" width="60" height="60" alt=""></td>
                                 <td>
                                     <button class="btn btn-info"><a href="{{ route('edit.blog',$blog ->id) }}" style="color: white">Edit</a></button>
-                                    <button class="btn btn-danger"><a href="" style="color: white">Delete</a></button>
+                                    <button class="btn btn-danger"><a href="{{ route('delete.blog',$blog ->id) }}" style="color: white">Delete</a></button>
                                 </td>
                             </tr>
                                 @endforeach 

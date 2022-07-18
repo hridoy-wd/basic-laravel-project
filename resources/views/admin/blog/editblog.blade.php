@@ -51,8 +51,8 @@
                       <div class="row mb-3">
                           <label for="example-text-input" class="col-sm-2 col-form-label">blog_description</label>
                           <div class="col-sm-10">
-                <textarea id="mytextarea" value="{{ $blog->blog_description }}" name="blog_description" required>
-
+                <textarea id="mytextarea"  name="blog_description">
+                    {{ $blog->blog_description }}
                 </textarea>
                           </div>
                       </div>
@@ -61,8 +61,8 @@
                        <div class="row mb-3">
                           <label for="example-text-input" class="col-sm-2 col-form-label">blog_image </label>
                           <div class="col-sm-10">
-                     <input name="blog_image" required class="form-control" type="file" id="image">
-                     <img src="{{ asset($blog->blog_image) }}" alt="">
+                     <input name="blog_image"  class="form-control" type="file" id="image">
+                     <img src="{{ asset($blog->blog_image) }}" width="200" alt="">
                           </div>
                       </div>
                      <!-- end row -->

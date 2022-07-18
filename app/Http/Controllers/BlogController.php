@@ -46,7 +46,41 @@ class BlogController extends Controller
       return view('admin.blog.editblog',compact('blog', 'categories'));
     }
 
-  
+    public function update(Request $request){
 
-   
+      $blog = $request->id;
+      if($request->file('blog_image')){
+          $file = $request->file('blog_image');
+          $fileName = date('YmdHi').'.'.$file->getClientOriginalExtension();
+          Image::make($file)->resize('1020, 519')->save('upload/blogs_image/'.$fileName);
+          $saveimage = 'upload/blogs_image/'.$fileName;
+
+          blogg::findOrFail($blog)->update([
+              'blog_category_id'=>$request->blog_category_id,
+              'blog_title'=>$request->blog_title,
+              'blog_tags'=>$request->blog_tags,
+              'blog_description'=>$request->blog_description,
+              'blog_image'=>$saveimage,
+          ]);
+          return redirect()->route('all.blog');
+      }else{
+        blogg::findOrFail($blog)->update([
+          'blog_category_id'=>$request->blog_category_id,
+          'blog_title'=>$request->blog_title,
+          'blog_tags'=>$request->blog_tags,
+          'blog_description'=>$request->blog_description,
+      ]);
+          return redirect()->route('all.blog');
+      }
+    }
+
+    public function delete($id){
+        $blog =  blogg::findOrFail($id);
+          $img = $blog->blog_image;
+          unlink($img);
+
+          blogg::findOrFail($id)->delete();
+          return redirect()->route('all.blog');
+    }
+
 }
