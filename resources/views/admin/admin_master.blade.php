@@ -9,7 +9,11 @@
         <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
         <meta content="Themesdesign" name="author" />
 
-     
+        <!-- CSS only -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+        crossorigin="anonymous">
         <script src="https://cdn.ckeditor.com/ckeditor5/34.2.0/classic/ckeditor.js"></script>
       
 
@@ -47,10 +51,7 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
         <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
         
-        <script>
-             tinymce.init({
-               selector: 'textarea#editor', });
-        </script>
+      
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput.css" integrity="sha512-xmGTNt20S0t62wHLmQec2DauG9T+owP9e6VU8GigI0anN7OXLip9i7IwEhelasml2osdxX71XcYm6BQunTQeQg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     </head>
 
@@ -124,46 +125,26 @@
  
   
       
-     {{-- ///text editor setup --}}
-<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    
+       <script src="https://cdn.tiny.cloud/1/puaj0st85hazrc4pknotifex15t60finotbuuchrlpckwj5i/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.6.0/umd/popper.min.js" integrity="sha512-BmM0/BQlqh02wuK5Gz9yrbe7VyIVwOzD1o40yi1IsTjriX/NGF37NyXHfmFzIlMmoSIBXgqDiG1VNU6kB5dBbA==" crossorigin="anonymous"></script>
+<script>
+  tinymce.init({
+              selector: 'textarea',
+              height: 500,
+              // plugins: 'a11ychecker advcode casechange export formatpainter image editimage linkchecker autolink lists checklist media mediaembed pageembed permanentpen powerpaste table advtable tableofcontents tinycomments tinymcespellchecker',
+              // toolbar: 'a11ycheck addcomment showcomments casechange checklist code export formatpainter image editimage pageembed permanentpen table tableofcontents',
+              // toolbar_mode: 'floating',
+              // tinycomments_mode: 'embedded',
+              // tinycomments_author: 'Author name',
+              plugins: 'advlist lists link autolink autosave code preview searchreplace wordcount media table image emoticons imagetools',
+              toolbar: 'blocks bold italic underline | alignleft aligncenter alignright alignjustify | bullist numlist | outdent indent |link image media | forecolor backcolor emoticons | code preview',
+              images_upload_url:'/'
+});
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tagsinput/0.8.0/bootstrap-tagsinput.min.js" integrity="sha512-9UR1ynHntZdqHnwXKTaOm1s6V9fExqejKvg5XMawEMToW4sSw+3jtLrYfZPijvnwnnE8Uol1O9BcAskoxgec+g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-<script>
-    ClassicEditor
-        .create( document.querySelector( '#editor' ) )
-        .catch( error => {
-            console.error( error );
-        } );
-</script>
-
-<script>
-    @if(Session::has(' '))
-    var type = "{{ Session::get('alert-type','info') }}"
-    switch(type){
-       case 'info':
-       toastr.info(" {{ Session::get('message') }} ");
-       break;
-   
-       case 'success':
-       toastr.success(" {{ Session::get('message') }} ");
-       break;
-   
-       case 'warning':
-       toastr.warning(" {{ Session::get('message') }} ");
-       break;
-   
-       case 'error':
-       toastr.error(" {{ Session::get('message') }} ");
-       break; 
-    }
-    @endif 
-   </script>
     
          
     </body>

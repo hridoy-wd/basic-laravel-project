@@ -35,7 +35,7 @@
                                 <td>{{ $blog ->blog_tags }}</td>
                                 <td><img src="{{ asset($blog ->blog_image) }}" width="60" height="60" alt=""></td>
                                 <td>
-                                    <button class="btn btn-info"><a href="" style="color: white">Edit</a></button>
+                                    <button class="btn btn-info"><a href="{{ route('edit.blog',$blog ->id) }}" style="color: white">Edit</a></button>
                                     <button class="btn btn-danger"><a href="" style="color: white">Delete</a></button>
                                 </td>
                             </tr>

@@ -21,11 +21,7 @@ class BlogController extends Controller
     }
 
     public function store(Request $request){
-              $request->validate([
-                'blog_category_id'=>'required',
-                'blog_title'=>'required',
-                'blog_image'=>'required',
-              ]);
+
 
               $file = $request->file('blog_image');
               $fileName = date('YmdHi').'.'.$file->getClientOriginalExtension();
@@ -36,13 +32,21 @@ class BlogController extends Controller
                 'blog_category_id'=>$request->blog_category_id,
                 'blog_title'=>$request->blog_title ,
                 'blog_tags'=>$request->blog_tags, 
+                'blog_description'=>$request->blog_description, 
                 'blog_image'=>$saveUrl, 
-                'blog_description'=>$request->blog_description,
                 'created_at'=>Carbon::now(),
               ]);
 
-              return redirect()->route('all.blog');
-
-             
+              return redirect()->route('all.blog');      
     }
+
+    public function edit($id){
+      $blog = blogg::find($id);
+      $categories = CategoryBlog::orderBy('category','ASC')->get();
+      return view('admin.blog.editblog',compact('blog', 'categories'));
+    }
+
+  
+
+   
 }
