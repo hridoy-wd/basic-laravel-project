@@ -30,8 +30,7 @@
                                @foreach ($blogs as $blog) 
                             <tr>
                                 <td>{{ $i++ }}</td>
-                                
-                                <td>{{ $blog ->blog_category_id }}</td>
+                                <td> {{ $blog['category']['category'] }} </td>              
                                 <td>{{ $blog ->blog_title }}</td>
                                 <td>{{ $blog ->blog_tags }}</td>
                                 <td><img src="{{ asset($blog ->blog_image) }}" width="60" height="60" alt=""></td>

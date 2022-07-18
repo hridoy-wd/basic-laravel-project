@@ -16,7 +16,7 @@ class BlogController extends Controller
     }
 
     public function add(){
-        $categories = CategoryBlog::latest()->get();
+        $categories = CategoryBlog::orderBy('category','ASC')->get();
         return view('admin.blog.addblog', compact('categories'));
     }
 
