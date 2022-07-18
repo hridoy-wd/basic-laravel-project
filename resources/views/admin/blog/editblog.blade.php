@@ -25,7 +25,7 @@
                             <select class="form-select"  name="blog_category_id" aria-label="Default select example">
                                 <option selected="">Open this select Category</option>
                                   @foreach ($categories as $category)
-                                    <option value="{{ $category->id }}" {{ $category->id == $blog->blog_category_id ? 'selected' : ''}}>{{ $category->category}}</option>
+                                    <option value="{{ $category->id }}" {{ $category->id ==   ? 'selected' : ''}}>{{ $category->category}}</option>
                                   @endforeach
                                 </select>
                         </div>

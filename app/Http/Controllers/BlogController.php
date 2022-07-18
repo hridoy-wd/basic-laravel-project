@@ -25,7 +25,7 @@ class BlogController extends Controller
 
               $file = $request->file('blog_image');
               $fileName = date('YmdHi').'.'.$file->getClientOriginalExtension();
-              Image::make($file)->resize(234,124)->save('upload/blogs_image/'.$fileName);
+              Image::make($file)->resize(430,327)->save('upload/blogs_image/'.$fileName);
               $saveUrl = 'upload/blogs_image/'.$fileName;
 
               blogg::insert([
@@ -52,7 +52,7 @@ class BlogController extends Controller
       if($request->file('blog_image')){
           $file = $request->file('blog_image');
           $fileName = date('YmdHi').'.'.$file->getClientOriginalExtension();
-          Image::make($file)->resize('1020, 519')->save('upload/blogs_image/'.$fileName);
+          Image::make($file)->resize(430,327)->save('upload/blogs_image/'.$fileName);
           $saveimage = 'upload/blogs_image/'.$fileName;
 
           blogg::findOrFail($blog)->update([
