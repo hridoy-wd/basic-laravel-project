@@ -18,7 +18,7 @@
         <div class="blog__post__content">
             <span class="date">{{ ($blog->created_at)->diffForHumans() }}</span>
             <h3 class="title"><a href="blog-details.html">{{ $blog->blog_title }}</a></h3>
-            <a href="blog-details.html" class="read__more">Read mORe</a>
+            <a href="{{ route('blog.details',$blog->id) }}" class="read__more">Read More</a>
         </div>
     </div>
 </div>

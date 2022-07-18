@@ -83,4 +83,10 @@ class BlogController extends Controller
           return redirect()->route('all.blog');
     }
 
+    public function blogDetails($id){
+          $blogs = blogg::findOrFail($id);
+          $categories = CategoryBlog::orderBy('category','ASC')->get();
+           return view('frontend.blogDetails', compact('blogs','categories'));
+    }
+
 }

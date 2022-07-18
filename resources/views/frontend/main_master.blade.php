@@ -11,6 +11,7 @@
         <!-- Place favicon.ico in the root directory -->
 
 		<!-- CSS here -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         {{-- {{ asset('frontend/') }} --}}
         <link rel="stylesheet" href="{{ asset('frontend/assets/css/bootstrap.min.css') }}">
         <link rel="stylesheet" href="{{ asset('frontend/assets/css/animate.min.css') }}">

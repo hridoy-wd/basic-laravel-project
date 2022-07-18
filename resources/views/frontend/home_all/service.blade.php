@@ -15,7 +15,7 @@
         </div>
         <div class="row gx-0 services__active">
             @php
-                   $services = App\Models\Service::all();
+                   $services = App\Models\Service::latest()->get();
             @endphp
 
             @foreach ( $services as $service )
