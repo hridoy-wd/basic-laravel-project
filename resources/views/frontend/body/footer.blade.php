@@ -1,16 +1,17 @@
 <footer class="footer">
+    @php
+        $footer = App\Models\footer::find(1);
+    @endphp
     <div class="container">
         <div class="row justify-content-between">
             <div class="col-lg-4">
                 <div class="footer__widget">
                     <div class="fw-title">
                         <h5 class="sub-title">Contact us</h5>
-                        <h4 class="title">+81383 766 284</h4>
+                        <h4 class="title">{{ $footer->title1 }}</h4>
                     </div>
                     <div class="footer__widget__text">
-                        <p>There are many variations of passages of lorem ipsum
-                        available but the majority have suffered alteration
-                        in some form is also here.</p>
+                        <p>{!! $footer->description1 !!}</p>
                     </div>
                 </div>
             </div>
@@ -18,11 +19,10 @@
                 <div class="footer__widget">
                     <div class="fw-title">
                         <h5 class="sub-title">my address</h5>
-                        <h4 class="title">AUSTRALIA</h4>
+                        <h4 class="title">{{ $footer->title2}}</h4>
                     </div>
                     <div class="footer__widget__address">
-                        <p>Level 13, 2 Elizabeth Steereyt set <br> Melbourne, Victoria 3000</p>
-                        <a href="mailto:noreply@envato.com" class="mail">noreply@envato.com</a>
+                        <p>{!! $footer->description2 !!}</p>
                     </div>
                 </div>
             </div>
@@ -30,16 +30,13 @@
                 <div class="footer__widget">
                     <div class="fw-title">
                         <h5 class="sub-title">Follow me</h5>
-                        <h4 class="title">socially connect</h4>
+                        <h4 class="title">{{ $footer->title3}}</h4>
                     </div>
                     <div class="footer__widget__social">
-                        <p>Lorem ipsum dolor sit amet enim. <br> Etiam ullamcorper.</p>
+                        <p>{!! $footer->description3!!}</p>
                         <ul class="footer__social__list">
-                            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fab fa-behance"></i></a></li>
-                            <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-                            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                            <li><a href="{{$footer->facebook_link  }}"><i class="fab fa-facebook-f"></i></a></li>
+                            <li><a href="{{$footer->twitter_link  }}"><i class="fab fa-twitter"></i></a></li>
                         </ul>
                     </div>
                 </div>
@@ -49,7 +46,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="copyright__text text-center">
-                        <p>Copyright @ Hridoy 2022 All right Reserved</p>
+                        <p>{{$footer->copyright  }}</p>
                     </div>
                 </div>
             </div>
