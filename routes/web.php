@@ -4,6 +4,7 @@ use App\Http\Controllers\AboutController;
 use App\Http\Controllers\adminController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\category;
+use App\Http\Controllers\contactController;
 use App\Http\Controllers\footerController;
 use App\Http\Controllers\Home\HomeSlideController;
 use App\Http\Controllers\PortfolioController;
@@ -115,7 +116,10 @@ Route::controller(footerController::class)->group(function(){
 
 });//end method
 
+Route::controller(contactController::class)->group(function(){
+    Route::get('contact', 'contact')->name('contact');
 
+});//end method
 
 //breeze default all route
 Route::get('/dashboard', function () {
