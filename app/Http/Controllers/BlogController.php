@@ -95,4 +95,9 @@ class BlogController extends Controller
           return view('frontend.postDetails',compact('blogPost', 'categories'));
     }
 
+    public function blog(){
+      $data = blogg::latest()->get();
+      return view('frontend.homeAll', compact('data'));
+    }
+
 }

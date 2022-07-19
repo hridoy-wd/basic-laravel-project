@@ -103,6 +103,8 @@ Route::controller(BlogController::class)->group(function(){
     Route::get('blog/details/{id}', 'blogDetails')->name('blog.details');
     Route::get('category/post/{id}', 'categoryPost')->name('category.post');
 
+    Route::get('blog', 'blog')->name('home.blog');
+
 });
 //end method
 
