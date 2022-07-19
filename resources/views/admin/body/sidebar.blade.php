@@ -78,7 +78,15 @@
                         <li><a href="{{ route('add.category') }}">Add Category</a></li>
                     </ul>
                 </li>
-
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <i class="ri-mail-send-line"></i>
+                        <span>Contact Mail</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="false">
+                        <li><a href="{{ route('all.contact') }}">All Contact</a></li>
+                    </ul>
+                </li>
                   {{-- Blog Page setup --}}
                   <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
@@ -99,7 +107,6 @@
                     <ul class="sub-menu" aria-expanded="true">
                         <li>
                             <a href="{{ route('footer.page') }}" class="has-arrow">Update Footer</a>
-                            <a href="javascript: void(0);" class="has-arrow">Horizontal</a>
                         </li>
 
                     </ul>

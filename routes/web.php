@@ -118,6 +118,8 @@ Route::controller(footerController::class)->group(function(){
 
 Route::controller(contactController::class)->group(function(){
     Route::get('contact', 'contact')->name('contact');
+    Route::post('contact.save', 'store')->name('store.contact');
+    Route::get('all.contact', 'allContact')->name('all.contact');
 
 });//end method
 

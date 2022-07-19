@@ -6,10 +6,10 @@
         <title>Rasalina - Personal Portfolio HTML Template</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" >
 		<link rel="shortcut icon" type="image/x-icon" href="{{ asset('frontend/assets/img/favicon.png') }}">
         <!-- Place favicon.ico in the root directory -->
-
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
 		<!-- CSS here -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         {{-- {{ asset('frontend/') }} --}}
@@ -66,6 +66,28 @@
         <script src="{{ asset('frontend/assets/js/wow.min.js') }}"></script>
         <script src="{{ asset('frontend/assets/js/plugins.js') }}"></script>
         <script src="{{ asset('frontend/assets/js/main.js') }}"></script>
-       
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+        <script>
+            @if(Session::has(' '))
+            var type = "{{ Session::get('alert-type','info') }}"
+            switch(type){
+               case 'info':
+               toastr.info(" {{ Session::get('message') }} ");
+               break;
+           
+               case 'success':
+               toastr.success(" {{ Session::get('message') }} ");
+               break;
+           
+               case 'warning':
+               toastr.warning(" {{ Session::get('message') }} ");
+               break;
+           
+               case 'error':
+               toastr.error(" {{ Session::get('message') }} ");
+               break; 
+            }
+            @endif 
+           </script>
     </body>
 </html>
