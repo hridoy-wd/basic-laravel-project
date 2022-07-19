@@ -3,7 +3,9 @@
 @extends('frontend.main_master')
 @section('content')
 
-
+@section('title')
+ Portfolio | EasyLearning
+@endsection
    <main>
 
     <!-- breadcrumb-area -->

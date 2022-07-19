@@ -1,7 +1,9 @@
 @extends('frontend.main_master')
 @section('content')
 
-
+@section('title')
+ Portfolio Details | EasyLearning
+@endsection
 
 <section class="breadcrumb__wrap">
     <div class="container custom-container">

@@ -1,5 +1,9 @@
 @extends('frontend.main_master')
 @section('content')
+
+@section('title')
+ Home | EasyLearning
+@endsection
 <main>
 
     <!-- banner-area -->
