@@ -89,4 +89,9 @@ class BlogController extends Controller
            return view('frontend.blogDetails', compact('blogs','categories'));
     }
 
+    public function categoryPost($id){
+          $blogPost = blogg::where('blog_category_id',$id)->orderBy('id','DESC')->get();
+          return view('frontend.postDetails',compact('blogPost'));
+    }
+
 }
