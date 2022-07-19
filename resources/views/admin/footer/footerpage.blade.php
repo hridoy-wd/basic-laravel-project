@@ -8,9 +8,9 @@
                 
 
                     <h4 class="card-title">Update Your Footer Page</h4>
-                    <form method="post" action="" enctype="multipart/form-data">
+                    <form method="post" action="{{ route('footer.update') }}" >
                       @csrf
-                      <input type="hidden" name="id" value="">
+                      <input type="hidden" name="id" value="{{ $footer->id }}">
                         
                       <div class="row mb-3">
                         <h3>footer part 1</h3>
