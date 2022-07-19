@@ -8,7 +8,7 @@
             <div class="row justify-content-center">
                 <div class="col-xl-6 col-lg-8 col-md-10">
                     <div class="breadcrumb__wrap__content">
-                        <h2 class="title">  </h2>
+                        <h2 class="title">{{ $categories->category }}  </h2>
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="index.html">Home</a></li>
@@ -56,8 +56,8 @@
                                 <div class="thumb"><img src="{{ asset($item->blog_image)  }}" alt=""></div>
                                 <span class="post__by">By : <a href="#">Halina Spond</a></span>
                             </div>
-                            <h2 class="title"><a href="blog-details.html">  {{ $item->blog_title }}    </a></h2>
-                            <p>{!! $item->blog_description !!}</p>
+                            <h2 class="title"><a href="{{ route('blog.details',$item->id) }}">  {{ $item->blog_title }}    </a></h2>
+                            <p> {!! Str::limit($item->blog_description, 190) !!}</p>
                             <ul class="blog__post__meta">
                                 <li><i class="fal fa-calendar-alt"></i></li>
                                 <li class="post-share"><a href="#"><i class="fal fa-share-all"></i> (18)</a></li>

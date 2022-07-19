@@ -91,7 +91,8 @@ class BlogController extends Controller
 
     public function categoryPost($id){
           $blogPost = blogg::where('blog_category_id',$id)->orderBy('id','DESC')->get();
-          return view('frontend.postDetails',compact('blogPost'));
+          $categories = CategoryBlog::findOrFail($id);
+          return view('frontend.postDetails',compact('blogPost', 'categories'));
     }
 
 }
