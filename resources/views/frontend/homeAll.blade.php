@@ -42,9 +42,7 @@
 
 
 
-                @foreach ($data as $item)
-                    
-               
+                @foreach ($data as $item)            
                 <div class="col-lg-8">
                     <div class="standard__blog__post">
                         <div class="standard__blog__thumb">

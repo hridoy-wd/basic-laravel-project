@@ -4,6 +4,7 @@ use App\Http\Controllers\AboutController;
 use App\Http\Controllers\adminController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\category;
+use App\Http\Controllers\footerController;
 use App\Http\Controllers\Home\HomeSlideController;
 use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\ServiceController;
@@ -107,6 +108,10 @@ Route::controller(BlogController::class)->group(function(){
 
 });
 //end method
+
+Route::controller(footerController::class)->group(function(){
+    Route::get('footer', 'footerPage')->name('footer.page');
+});//end method
 
 
 
