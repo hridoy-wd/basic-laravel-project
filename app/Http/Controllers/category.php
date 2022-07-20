@@ -21,9 +21,7 @@ class category extends Controller
 
 
     public function store(Request $request){
-        $request->validate([
-            'category'=>'required'
-        ]);
+     
 
         CategoryBlog::insert([
              'category'=>$request->category,

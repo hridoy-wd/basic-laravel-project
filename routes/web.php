@@ -27,6 +27,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('frontend.index');
 });//end method
+
+Route::fallback(function(){
+    return view('frontend.index');
+});//end method
+
 //admin all route
 Route::controller(adminController::class)->group(function(){
 Route::get('/admin/logout', 'destroy')->name('admin.logout');
@@ -37,7 +42,7 @@ Route::post('/store/profile/img', 'store')->name('store.profile');
 
 //HomeSlide all route
 Route::controller(HomeSlideController::class)->group(function(){
-    Route::get('/home/slide', 'index')->name('home.slide');
+    Route::get('/home/slide', 'index')->name('home.slide')->middleware('auth');
     Route::post('/home/slideUpdate', 'update')->name('store.homeSlide');
     });//end method
 
@@ -112,15 +117,15 @@ Route::controller(BlogController::class)->group(function(){
 //end method
 
 Route::controller(footerController::class)->group(function(){
-    Route::get('footer', 'footerPage')->name('footer.page');
-    Route::post('footer', 'footerUpdate')->name('footer.update');
+    Route::get('footer', 'footerPage')->name('footer.page')->middleware('auth');
+    Route::post('footer/Update', 'footerUpdate')->name('footer.update')->middleware('auth');
 
 });//end method
 
 Route::controller(contactController::class)->group(function(){
     Route::get('contact', 'contact')->name('contact');
-    Route::post('contact.save', 'store')->name('store.contact');
-    Route::get('all.contact', 'allContact')->name('all.contact');
+    Route::post('contact/save', 'store')->name('store.contact')->middleware('auth');
+    Route::get('all.contact', 'allContact')->name('all.contact')->middleware('auth');
 
 });//end method
 

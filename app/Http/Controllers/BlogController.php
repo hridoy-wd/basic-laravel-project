@@ -96,7 +96,7 @@ class BlogController extends Controller
     }
 
     public function blog(){
-      $data = blogg::latest()->get();
+      $data = blogg::latest()->paginate(3);
       return view('frontend.homeAll', compact('data'));
     }
 

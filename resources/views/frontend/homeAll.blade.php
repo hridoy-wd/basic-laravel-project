@@ -72,7 +72,9 @@
                 @endforeach
         
 
-
+                <div class="pagination-wrap">
+                    {{ $data->links() }}
+                </div>
 
 
 
